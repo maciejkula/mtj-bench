@@ -30,7 +30,7 @@ public class VectorBenchmark {
     }
 
     @GenerateMicroBenchmark
-    public void testDenseDot() {
+    public void testDenseDenseDot() {
         xDense.dot(yDense);
     }
 
@@ -47,5 +47,25 @@ public class VectorBenchmark {
     @GenerateMicroBenchmark
     public void testSparseDenseDot() {
         xSparse.dot(yDense);
+    }
+
+    @GenerateMicroBenchmark
+    public void testDenseDenseMult() {
+        xDense.mult(yDense);
+    }
+
+    @GenerateMicroBenchmark
+    public void testSparseDenseMult() {
+        xSparse.mult(yDense);
+    }
+
+    @GenerateMicroBenchmark
+    public void testDenseSparseMult() {
+        xDense.mult(ySparse);
+    }
+
+    @GenerateMicroBenchmark
+    public void testSparseSparseMult() {
+        xSparse.mult(ySparse);
     }
 }
